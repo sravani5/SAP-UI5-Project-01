@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="practice.controller.HelloPanel"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data">
+	<!--<App>-->
+	<!--	<pages>-->
+	<!--		<Page title="Title">-->
+	<!--			<content>-->
+	<!--			</content>-->
+	<!--		</Page>-->
+	<!--	</pages>-->
+	<!--</App>-->
+	<!--<Panel headerText="{i18n>helloPanelTitle}" expandable="true" expanded="false" class="sapUiResponsiveMargin" width="auto">-->
+	<!--	<content>-->
+	<!--<Text text="welcome to SAP" class="sapUiSmallMarginEnd"/>-->
+	<!--<Button text="{i18n>Click}" press="onClick"/>-->
+	<!--<Button text="{i18n>Click}" press="onClick"/>-->
+	<!--<Input value="{/recipient/name}" description="HELLO{/recipient/name}" valueLiveUpdate="true" width="60%" class="sapUiSmallMargin"/>-->
+	<!--<Button text="{i18n>Dialog}" press="onDialogOpen"/>-->
+	<!--	</content>-->
+	<!--</Panel>-->
+	<!--<DisplayListItem label="Website" value="http://www.sap.com" type="Active" press="handleUrlPress"/>-->
+	<!--Wizard Exmaple-->
+	<!--<Wizard id="wizard" complete="wizardCompleteHandler">-->
+	<!--	<WizardStep id="productTypeStep" title="Product Type" validated="true">-->
+	<!--		<MessageStrip class="sapUiSmallMarginBottom"-->
+	<!--			text="The Wizard control is supposed to break down large tasks, into smaller steps, easier for the user to work with." showIcon="true"/>-->
+	<!--		<Text class="sapUiSmallMarginBottom" text="Sed fermentum, mi et tristique ullamcorper"/>-->
+	<!--	</WizardStep>-->
+	<!--	<WizardStep id="ProductInfoStep" validated="false" title="Product Information" activate="additionalInfoValidation">-->
+	<!--		<MessageStrip class="sapUiSmallMarginBottom"-->
+	<!--			text="Validation in the wizard is controlled by calling the validateStep(Step) and invalidateStep(Step) methods " showIcon="true"/>-->
+	<!--		<Text class="sapUiSmallMarginBottom" text="Sed fermentum, mi et tristique ullamcorper"/>-->
+	<!--	</WizardStep>-->
+	<!--	<WizardStep id="OptionalInfoStep" validated="true" activate="optionalStepActivation" title="Optional Information">-->
+	<!--		<MessageStrip class="sapUiSmallMarginBottom"-->
+	<!--			text="You can validate steps by default with the validated='true' property of the step. The next button is always enabled." showIcon="true"/>-->
+	<!--		<Text text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar"/>-->
+	<!--	</WizardStep>-->
+	<!--</Wizard>-->
+	<!--Chart Example-->
+	<!--<viz:Popover id="idPopOver"></viz:Popover>-->
+	<!--<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType="line">-->
+	<!--	<viz:dataset>-->
+	<!--		<viz.data:FlattenedDataset data="{/Invoices}">-->
+	<!--			<viz.data:dimensions>-->
+	<!--				<viz.data:DimensionDefintion name="ProductId" value="{ProductName}"/>-->
+	<!--			</viz.data:dimensions>-->
+	<!--			<viz.data:measures>-->
+	<!--				<viz.data:MeasureDefintion name="ExtendedPrice" value="{ExtendedPrice}"/>-->
+	<!--			</viz.data:measures>-->
+	<!--		</viz.data:FlattenedDataset>-->
+	<!--	</viz:dataset>-->
+	<!--	<viz:feeds>-->
+	<!--		<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="ExtendedPrice"/>-->
+	<!--		<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" value="ProductId"/>-->
+	<!--	</viz:feeds>-->
+	<!--</viz:VizFrame>-->
+</mvc:View>

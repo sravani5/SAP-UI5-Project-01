@@ -1,0 +1,84 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="practice.controller.InvoiceList"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:u="sap.ui.unified">
+	<!--<List id="invoiceList" headerText="{i18n>InvoiceListTitle}"-->
+	<!--	items="{ path : 'invoice>/Invoices', sorter : { path : 'ProductName', group : true } }">-->
+	<!--	<headerToolbar>-->
+	<!--		<Toolbar>-->
+	<!--			<ToolbarSpacer/>-->
+	<!--			<SearchField search="onSearch" width="30%"/>-->
+	<!--		</Toolbar>-->
+	<!--	</headerToolbar>-->
+	<!--	<items>-->
+	<!--		<ObjectListItem title="{invoice>Quantity} * {invoice>ProductName}"-->
+	<!--			number="{ parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"-->
+	<!--			numberUnit="{view>/currency}" numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">-->
+	<!--			<firstStatus>-->
+	<!--				<ObjectStatus text="{ path: 'invoice>Status', formatter: '.formatter.statusText' }"/>-->
+	<!--			</firstStatus>-->
+	<!--		</ObjectListItem>-->
+	<!--	</items>-->
+	<!--</List>-->
+	<Table id="table" items="{path :'invoice>/Invoices'}" class="sapUiSizeCompact">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="{i18n>Products}"/>
+				<ToolbarSpacer/>
+				<Button text="{i18n>EDIT}" press="onEdit"/>
+				<Button text="{i18n>Save}" press="onSave"/>
+				<Button text="{i18n>Cancel}" press="onCancel"/>
+				<Button text="{i18n>addRow}" press="onaddRow"/>
+				<Button text="Export a Spreadsheet" press="onExport"/>
+				<u:FileUploader id="fileUpload" uploadUrl="upload/" buttonText="{i18n>ExcelUpload}" buttonOnly="true" icon="sap-icon://upload"
+					change="handleValueChange" uploadComplete="onUploadCompleteFUP"/>
+				<!--<u:FileUploader id="fileUpload" iconOnly="true" icon="sap-icon://upload" name="IUpload" uploadUrl="upload/"-->
+				<!--uploadComplete="handleUploadFile" change="handleValueChange" buttonOnly="true"/>-->
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>ProductName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>Quantity}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>ExtendedPrice}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>ShipperName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>Status}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells class="cellclassdata">
+					<Input value="{invoice>ProductName}" editable="{oViewModel>/isEditable}"/>
+					<Input value="{invoice>ProductName}" editable="{oViewModel>/isEditable}"/>
+					<Input value="{invoice>Quantity}" editable="{oViewModel>/isEditable}"/>
+					<Input value="{invoice>ExtendedPrice}" editable="{oViewModel>/isEditable}"/>
+					<Input value="{invoice>ShipperName}" editable="{oViewModel>/isEditable}"/>
+					<Input value="{invoice>Status}" editable="{oViewModel>/isEditable}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<!--<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">-->
+	<!--	<items>-->
+	<!--		<IconTabFilter showAll="true" count="{/ProductCollectionStats/Counts/Total}" text="Products" key="All"/>-->
+	<!--		<IconTabSeparator/>-->
+	<!--		<IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Ok" key="Ok"/>-->
+	<!--		<IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Heavy" key="Heavy"/>-->
+	<!--		<IconTabFilter icon="sap-icon://inventory" iconColor="Negative" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Overweight"-->
+	<!--			key="Overweight"/>-->
+	<!--	</items>-->
+	<!--</IconTabBar>-->
+	<!--<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect">-->
+	<!--	<items>-->
+	<!--		<IconTabFilter icon="sap-icon://begin" iconColor="positive" count="{/Invoices}" text="Ok" key="Ok"/>-->
+	<!--		<IconTabFilter icon="sap-icon://compare" iconColor="Critical" text="Heavy" key="Heavy"/>-->
+	<!--		<IconTabFilter icon="sap-icon://inventory" iconZColor="Negative" text="Overweight" key="Overweight"/>-->
+	<!--	</items>-->
+	<!--</IconTabBar>-->
+</mvc:View>
